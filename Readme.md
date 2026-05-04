@@ -13,11 +13,8 @@
 
 ## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
 - 게시글 리스트 페이지
-<img width="304" height="232" alt="스크린샷 2026-05-04 173150" src="https://github.com/user-attachments/assets/ba5e8e2b-734b-4561-a205-73a39c83073e" />
 - 게시글 등록 폼 페이지
-  <img width="361" height="355" alt="스크린샷 2026-05-04 173202" src="https://github.com/user-attachments/assets/c32b504f-d8fe-4c34-848a-c40cf20148e6" />
 - 게시글 상세 페이지
-  <img width="309" height="198" alt="스크린샷 2026-05-04 173213" src="https://github.com/user-attachments/assets/96985b39-0072-440e-910c-f02cb992a9d4" />
 
 ## MVC 패턴
 - Model, View, Controller 의 약자로, 하나의 어플리케이션 구성할 때 그 구성 요서를 세가지 역할로 구분한 패턴 입니다.
@@ -70,3 +67,4 @@
     - 캐시 불가능
     - 브라우저 히스토리 안남음.
     - 데이터 길이 제한 없음.
+```명
