@@ -1,0 +1,12 @@
+package com.example.p_13305_1.global.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "게시물이 없다이")
+public class DataNotFoundException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+    public DataNotFoundException(String message) {
+        super(message);
+    }
+}
