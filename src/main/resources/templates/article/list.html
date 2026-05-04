@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>게시글 리스트</title>
+</head>
+<body>
+<main>
+	<fieldset>
+		<h1>게시글 리스트</h1>
+		<a href="/article/create">등록</a>
+	</fieldset>
+
+	<fieldset>
+		<p th:if="${articles.isEmpty()}">등록된 게시글이 없습니다.</p>
+
+		<ul th:if="${!articles.isEmpty()}">
+			<li th:each="article : ${articles}">
+				<a th:href="@{/article/detail/{id}(id=${article.id})}">
+					<span th:text="${article.id}">1</span>.
+					<span th:text="${article.title}">제목</span>
+				</a>
+			</li>
+		</ul>
+	</fieldset>
+</main>
+</body>
+</html>
