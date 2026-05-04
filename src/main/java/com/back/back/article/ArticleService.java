@@ -17,6 +17,11 @@ public class ArticleService {
 		return articleRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 	}
 
+	public Article findById(Long id) {
+		return articleRepository.findById(id)
+				.orElseThrow(() -> new ArticleNotFoundException(id));
+	}
+
 	@Transactional
 	public Article create(String title, String content) {
 		return articleRepository.save(new Article(title, content));
