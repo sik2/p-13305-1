@@ -1,0 +1,18 @@
+<h1>게시글 상세</h1>
+
+<div>
+    <label>제목</label>
+    <p th:text="${article.title}"></p>
+</div>
+
+<div>
+    <label>내용</label>
+    <p th:text="${article.content}"></p>
+</div>
+
+<div>
+    <label>작성일</label>
+    <p th:text="${article.createDate}"></p>
+</div>
+
+<button type="button" onclick="location.href='/article/list'">목록으로</button>
