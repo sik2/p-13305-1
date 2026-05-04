@@ -1,0 +1,13 @@
+<h2>수정 폼</h2>
+
+<form method="POST" th:action="@{|/article/update/${article.id}|}">
+    <input type="text"
+            name="title"
+            id="title"
+            th:value="${article.title}">
+    <input type="text"
+           name="content"
+           id="content"
+           th:value="${article.content}">
+    <button type="submit">수정하기</button>
+</form>
