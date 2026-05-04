@@ -13,8 +13,11 @@
 
 ## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
 - 게시글 리스트 페이지
+<img width="269" height="185" alt="스크린샷 2026-05-04 오후 5 43 26" src="https://github.com/user-attachments/assets/3c21f67e-08dd-46f6-a25e-b0104e5c350c" />
 - 게시글 등록 폼 페이지
+<img width="576" height="475" alt="스크린샷 2026-05-04 오후 5 42 58" src="https://github.com/user-attachments/assets/1f06576b-cd70-4085-a58a-473cf406f128" />
 - 게시글 상세 페이지
+<img width="327" height="285" alt="스크린샷 2026-05-04 오후 5 43 52" src="https://github.com/user-attachments/assets/4ab8387d-f42e-4011-8f43-9bb6076830a5" />
 
 ## MVC 패턴
 - Model: `Article`, `ArticleRepository`, `ArticleService`가 데이터와 비즈니스 로직을 담당한다.
