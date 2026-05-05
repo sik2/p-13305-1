@@ -1,0 +1,37 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+
+    <h2 class="mb-3">게시글 등록</h2>
+
+    <!--
+        th:action="@{/article/create}": 폼 제출 시 POST /article/create 로 요청
+        method="post": POST 방식으로 전송
+    -->
+    <form th:action="@{/article/create}" method="post">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">제목</label>
+            <!--
+                name="title": Controller의 @RequestParam String title 과 매칭됨
+                name 속성값과 @RequestParam 파라미터 이름이 반드시 같아야 함
+            -->
+            <input type="text" id="title" name="title" class="form-control"
+                   placeholder="제목을 입력하세요">
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <!--
+                name="content": Controller의 @RequestParam String content 와 매칭됨
+            -->
+            <textarea id="content" name="content" class="form-control"
+                      rows="10" placeholder="내용을 입력하세요"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">저장</button>
+        <a th:href="@{/article/list}" class="btn btn-secondary ms-2">취소</a>
+
+    </form>
+
+</div>
+</html>
