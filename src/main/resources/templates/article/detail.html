@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${article.title} + ' - 상세보기'">게시글 상세</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header">
+        <h1>📄 게시글 상세</h1>
+        <a th:href="@{/article/list}" class="btn btn-secondary">목록으로</a>
+    </div>
+
+    <div class="detail-card">
+
+        <h2 class="detail-title" th:text="${article.title}"></h2>
+
+        <div class="detail-meta">
+            <div class="meta-item">
+                번호 <span th:text="${article.id}"></span>
+            </div>
+            <div class="meta-item">
+                작성자 <span th:text="${article.author}"></span>
+            </div>
+            <div class="meta-item">
+                작성일 <span th:text="${#temporals.format(article.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
+            </div>
+        </div>
+
+        <div class="detail-content" th:text="${article.content}"></div>
+
+        <div class="detail-actions">
+            <a th:href="@{/article/list}" class="btn btn-secondary">목록</a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
