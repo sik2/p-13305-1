@@ -3,9 +3,11 @@ package com.back.article;
 import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -14,7 +16,9 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @GetMapping("/list")
-    public String list() {
+    public String list(Model model) {
+        List<Article> articleList = articleService.findAll();
+        model.addAttribute(articleList);
         return "article_list";
     }
 
@@ -32,5 +36,12 @@ public class ArticleController {
         articleService.save(article);
 
         return "redirect:/article/list";
+    }
+
+    @GetMapping("/detail/{id}")
+    public String detail(Model model, @PathVariable int id){
+        Article article = articleService.findById(id);
+        model.addAttribute(article);
+        return "article_detail";
     }
 }
