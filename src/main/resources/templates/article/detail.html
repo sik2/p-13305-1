@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>게시글 상세</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <td th:text="${article.id}"></td>
+        </tr>
+        <tr>
+            <th>제목</th>
+            <td th:text="${article.title}"></td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td th:text="${article.content}"></td>
+        </tr>
+        <tr>
+            <th>작성일</th>
+            <td th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></td>        </tr>
+    </table>
+    <a href="/article/list" class="btn btn-secondary">목록</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
