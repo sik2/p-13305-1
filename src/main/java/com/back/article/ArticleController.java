@@ -14,4 +14,9 @@ public class ArticleController {
     public String list() {
         return "article_list";
     }
+
+    @GetMapping("/create")
+    public String create() {
+        return "article_create";
+    }
 }
