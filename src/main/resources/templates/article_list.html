@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<div layout:fragment="content" class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">게시글 리스트</h2>
+        <a th:href="@{/article/create}" class="btn btn-primary btn-sm">게시글 등록하기</a>
+    </div>
+<table class="table table-hover align-middle">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성일시</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article, loop : ${articleList}">
+        <td th:text="${loop.count}"></td>
+        <td><a class="text-decoration-none" th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}"></a></td>
+        <td th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd HH:mm')}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</html>
+
+
