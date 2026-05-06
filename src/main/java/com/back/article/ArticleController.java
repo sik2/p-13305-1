@@ -31,6 +31,6 @@ public class ArticleController {
         article.setCreateDate(LocalDateTime.now());
         articleService.save(article);
 
-        return "article_create";
+        return "redirect:/article/list";
     }
 }
