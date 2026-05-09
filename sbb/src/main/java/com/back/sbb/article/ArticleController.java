@@ -1,9 +1,13 @@
 package com.back.sbb.article;
 
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class ArticleController {
@@ -20,7 +24,10 @@ public class ArticleController {
     }
 
     @GetMapping("/article/list")
-    public String list() {
+    public String list(Model model) {
+        List<Article> articles = articleRepository.findAll();
+        model.addAttribute("articles", articles);
+
         return "article/list";
     }
 
@@ -35,5 +42,13 @@ public class ArticleController {
         articleRepository.save(article);
 
         return "redirect:/article/list";
+    }
+
+    @GetMapping("/article/detail/{id}")
+    public String detail(@PathVariable Long id, Model model) {
+        Article article = articleRepository.findById(id).orElseThrow();
+        model.addAttribute("article", article);
+
+        return "article/detail";
     }
 }
