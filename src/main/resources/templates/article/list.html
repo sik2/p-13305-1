@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록</title>
+</head>
+<body>
+
+<h1>게시글 목록</h1>
+
+<a href="/article/create">
+    <button>등록</button>
+</a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.id}"></td>
+        <td>
+            <a th:href="@{/article/detail/{id}(id=${article.id})}"
+               th:text="${article.title}"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
