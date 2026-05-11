@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 상세</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<main class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h1 class="mb-0">게시글 상세</h1>
+        <a href="/article/list" class="btn btn-outline-secondary">목록</a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="text-muted">번호</span>
+            <span th:text="${article.id}">1</span>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title h4" th:text="${article.title}">게시글 제목</h2>
+            <p class="card-text mt-4" style="white-space: pre-line;" th:text="${article.content}">게시글 내용</p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            <span>등록일: </span>
+            <span th:text="${article.createdDate}">2025-05-09T10:20</span>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

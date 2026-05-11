@@ -32,17 +32,11 @@ html의 경우 AI에 도움을 받아 모던적인 디자인으로 꾸몄다.
 
 ## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
 - 게시글 리스트 페이지
-  
-![게시글 리스트](sbb/src/main/resources/static/images/게시글_리스트.png)
-
+- ![img.png](src/main/resources/static/images/게시글_리스트.png)
 - 게시글 등록 폼 페이지
-  
-![게시글 등록](sbb/src/main/resources/static/images/게시글_등록.png)
-
+- ![img.png](src/main/resources/static/images/게시글_등록.png)
 - 게시글 상세 페이지
-  
-![게시글 상세](sbb/src/main/resources/static/images/게시글_상세.png)
-
+![img.png](src/main/resources/static/images/게시글_상세.png)
 ## MVC 패턴
 MVC 패턴은 사용자의 요청을 처리하는 구조를 역할별로 분리한 설계 패턴이다.
 애플리케이션을 Model, View, Controller로 나누어 각각의 책임을 분리한다.
@@ -119,11 +113,8 @@ GET은 서버에서 데이터를 조회할 때 주로 사용한다.
 - 브라우저 주소창에 직접 입력해서 요청할 수 있다.
 - 같은 요청을 여러 번 보내도 서버 데이터가 변경되지 않는 것이 일반적이다.
 
-### POST 요청
-POST는 서버에 데이터를 생성하거나 저장할 때 주로 사용한다.
+예시:
 
-- 데이터를 등록하거나 변경할 때 사용한다.
-- 요청 데이터가 HTTP body에 담겨 전송된다.
-- URL에 입력값이 직접 보이지 않는다.
-- 서버의 데이터 상태가 변경될 수 있다.
-
+```text
+GET /article/list
+GET /article/detail/1
