@@ -32,11 +32,17 @@ html의 경우 AI에 도움을 받아 모던적인 디자인으로 꾸몄다.
 
 ## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
 - 게시글 리스트 페이지
-- ![img.png](src/main/resources/static/images/게시글_리스트.png)
+  
+![게시글 리스트](sbb/src/main/resources/static/images/게시글_리스트.png)
+
 - 게시글 등록 폼 페이지
-- ![img.png](src/main/resources/static/images/게시글_등록.png)
+  
+![게시글 등록](sbb/src/main/resources/static/images/게시글_등록.png)
+
 - 게시글 상세 페이지
-![img.png](src/main/resources/static/images/게시글_상세.png)
+  
+![게시글 상세](sbb/src/main/resources/static/images/게시글_상세.png)
+
 ## MVC 패턴
 MVC 패턴은 사용자의 요청을 처리하는 구조를 역할별로 분리한 설계 패턴이다.
 애플리케이션을 Model, View, Controller로 나누어 각각의 책임을 분리한다.
