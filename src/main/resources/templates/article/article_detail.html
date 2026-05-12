@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h1 th:text="${article.title}"></h1>
+
+    <hr/>
+
+    <div class="mb-3 position-relative">
+
+
+        <textarea class="form-control pe-5"
+                  rows="8"
+                  readonly
+                  th:text="${article.content}">
+        </textarea>
+
+        <div class="position-absolute bottom-0 end-0 m-3 px-3 py-1"
+             style="
+                background-color: #fafafa;
+                border-radius: 999px;
+                font-size: 12px;
+             "
+             th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd HH:mm')}">
+        </div>
+
+    </div>
+
+    <a href="/article/list"
+       class="link-primary">
+        Article 목록
+    </a>
+
+</div>
+
+</body>
+</html>
