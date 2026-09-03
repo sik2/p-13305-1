@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="signupErrorsFragment" th:if="${#fields.hasErrors()}" class="alert alert-secondary" role="alert">
+    <div th:each="err : ${#fields.errors('username')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.errors('nickname')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.errors('password1')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.errors('password2')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+</div>
+<div th:fragment="articleErrorsFragment" th:if="${#fields.hasErrors()}" class="alert alert-secondary" role="alert">
+    <div th:each="err : ${#fields.errors('title')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.errors('content')}" th:text="${err}"></div>
+    <div th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+</div>
+<div th:fragment="loginErrorsFragment" th:if="${param.error}" class="alert alert-secondary" role="alert">
+    사용자 ID 또는 비밀번호를 확인해 주세요.
+</div>
+</html>
